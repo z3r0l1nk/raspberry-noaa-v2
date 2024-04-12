@@ -2,9 +2,9 @@
 # base station configurations
 #   latitude: south values are negative
 #   longitude: west values are negative
-latitude: 40.712776
-longitude: -74.005974
-altitude: 0.0
+latitude: 44.30867
+longitude: 26.19286
+altitude: 90
 
 #Website language settings
 #   lang_setting: see the 'webpanel/App/Lang' folder for available
@@ -45,8 +45,8 @@ test_freq_offset: 0
 #   <satellite_name>_sat_min_elevation - threshold for sat elevation for specific satellite captures
 #   <satellite_name>_memory_threshold - for METEOR satellite, minimum free memory (MB) required to store pass in RAM
 
-noaa_memory_threshold: 50
-meteor_m2_memory_threshold: 10
+noaa_memory_threshold: 150
+meteor_m2_memory_threshold: 150
 
 select_best_overlapping_passes: true
 select_meteor_pass_over_noaa: true
@@ -79,7 +79,7 @@ meteor_m2_3_schedule: true
 meteor_m2_3_sdr_device_id: 0
 meteor_m2_3_freq_offset: 0
 meteor_m2_3_enable_bias_tee: false
-meteor_m2_3_gain: 29.7
+meteor_m2_3_gain: 15
 meteor_m2_3_schedule_sun_min_elevation: -6
 meteor_m2_3_sun_min_elevation: 6
 meteor_m2_3_sat_min_elevation: 30
@@ -89,7 +89,7 @@ meteor_m2_4_schedule: true
 meteor_m2_4_sdr_device_id: 0
 meteor_m2_4_freq_offset: 0
 meteor_m2_4_enable_bias_tee: false
-meteor_m2_4_gain: 29.7
+meteor_m2_4_gain: 15
 meteor_m2_4_schedule_sun_min_elevation: -6
 meteor_m2_4_sun_min_elevation: 6
 meteor_m2_4_sat_min_elevation: 30
@@ -178,8 +178,8 @@ extend_for_annotation: true
 image_annotation_location: 'North'
 produce_polar_az_el_graph: false
 produce_polar_direction_graph: true
-ground_station_location: ''
-antenna_information: ''
+ground_station_location: 'KN34CH'
+antenna_information: 'QFH Antenna'
 show_sun_elevation: true
 show_pass_direction: true
 produce_spectrogram: true
@@ -235,7 +235,7 @@ meteor_create_spreaded_images_without_overlay: true
 #                            https://www.php.net/manual/en/datetime.format.php or else bad things will happen
 #   web_datetime_format - format to display date and time in the web interface for captures - note that this MUST conform to
 #                         https://www.php.net/manual/en/datetime.format.php or else bad things will happen
-web_server_name: raspberry-noaa.localdomain
+web_server_name: noaa.home
 enable_non_tls: true
 web_port: 80
 enable_tls: false
@@ -243,8 +243,8 @@ web_tls_port: 443
 lock_admin_page: true
 admin_username: 'admin'
 admin_password: 'admin'
-web_passes_date_format: 'm/d/Y'
-web_datetime_format: 'm/d/Y H:i:s'
+web_passes_date_format: 'd/m/Y'
+web_datetime_format: 'd/m/Y H:i:s'
 
 # log level for output from scripts
 log_level: DEBUG
@@ -253,8 +253,11 @@ log_level: DEBUG
 # in the passes view - note that this iframe-driven visualization is
 # by default disabled on "extra-small" devices such as phones due to
 # the processing and space requirements
-enable_satvis: true
-
+enable_satvis: false
+# whether to enable the "Coronal mass ejection activity" display
+# in the passes view - note that the GIFs can be ~70 MiB and not cached
+# thus they slow down the page & can lead to quite big data usage
+enable_coronal: false
 # whether to enable the image video in the passes view - note that this
 # is by default disabled on "extra-small" devices such as phones due
 # to the processing and space requirements
@@ -291,7 +294,7 @@ contribute_to_community_composites_url: 'https://voxgalactica.com/upload'
 enable_email_push: false
 email_push_address: test@ifttt.com
 enable_email_schedule_push: false
-enable_discord_push: true
+enable_discord_push: false
 discord_noaa_webhook_url: 'https://discord.com/api/webhooks/1135901731918717068/ZELG3Sv1fRxQ8KgoYtMMOBYM07az0yIkzeLdad-8WxxhV-F8LhPQdZFFon044awMvLsD'
 discord_meteor_webhook_url: 'https://discord.com/api/webhooks/1135901731918717068/ZELG3Sv1fRxQ8KgoYtMMOBYM07az0yIkzeLdad-8WxxhV-F8LhPQdZFFon044awMvLsD'
 enable_pushover_push: false
