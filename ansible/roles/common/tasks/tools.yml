@@ -18,7 +18,7 @@
   cron:
     name: schedule passes after reboot
     special_time: reboot
-    job: "{{ noaa_home }}/scripts/schedule.sh"
+    job: "{{ noaa_home }}/scripts/schedule.sh -t -x"
 
 - name: Set permissions on set_os_config_kernel8.sh
   file:
