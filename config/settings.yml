@@ -257,7 +257,7 @@ log_level: DEBUG
 # in the passes view - note that this iframe-driven visualization is
 # by default disabled on "extra-small" devices such as phones due to
 # the processing and space requirements
-enable_satvis: true
+enable_satvis: false
 
 
 # whether to enable the "Coronal mass ejection activity" display
